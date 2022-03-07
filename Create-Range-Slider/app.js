@@ -15,5 +15,8 @@ range.addEventListener('mousemove', function(e) {
 
 var slider = document.getElementById('#slider');
 slider.addEventListener('change', function(val) {
-    
+    var processWidth = val.pageX - this.offsetLeft;
+    var percent = processWidth / this.offsetWidth * 100;
+    percent = Math.round(percent);
+    update(percent);
 })
